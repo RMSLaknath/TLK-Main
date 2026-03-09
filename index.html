@@ -1,0 +1,1238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TLK Export | Wooden Craft Exports</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <link href="assets/img/logo.jpeg" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      :root {
+        --timber-dark: var(--accent-color);
+        --timber-light: var(--accent-color-2);
+        --timber-muted: rgba(21, 101, 192, 0.08);
+      }
+
+      .sitename {
+        color: var(--timber-dark);
+      }
+
+      .btn-primary {
+        background-color: var(--timber-dark);
+        border-color: var(--timber-dark);
+        color: #fff;
+        padding: 12px 22px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .btn-primary:hover {
+        background-color: var(--timber-light);
+        border-color: var(--timber-light);
+        color: #fff;
+      }
+
+      .service-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          var(--timber-dark),
+          var(--timber-light)
+        );
+        margin-bottom: 14px;
+        box-shadow: 0 6px 18px rgba(21, 101, 192, 0.06);
+      }
+      .service-icon i {
+        color: #fff;
+        font-size: 1.4rem;
+      }
+
+      .product-card.service-item {
+        border: 1px solid var(--timber-muted);
+        border-radius: 14px;
+        padding: 1.15rem;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease;
+        background: #fff;
+        height: 100%;
+      }
+      .product-card.service-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(21, 101, 192, 0.06);
+      }
+
+      .service-link {
+        color: var(--timber-dark);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .service-link:hover {
+        color: var(--timber-light);
+        text-decoration: none;
+      }
+
+      .social-links a .bi,
+      .team-member .social .bi {
+        color: var(--timber-dark);
+        transition:
+          color 0.15s ease,
+          transform 0.12s ease;
+      }
+      .social-links a:hover .bi,
+      .team-member .social a:hover .bi {
+        color: var(--timber-light);
+        transform: translateY(-3px);
+      }
+
+      @media (max-width: 767px) {
+        .service-icon {
+          width: 56px;
+          height: 56px;
+        }
+      }
+
+      .team .team-member {
+        max-width: 720px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .team .team-member .member-img img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        border: 6px solid rgba(255, 255, 255, 0.9);
+      }
+      .team .team-member .member-info h4 {
+        margin-top: 1rem;
+        margin-bottom: 0.25rem;
+        font-size: 1.6rem;
+      }
+      .team .team-member .member-info span {
+        display: block;
+        color: var(--timber-dark);
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+      .team .team-member .member-info p {
+        margin: 0 auto;
+        max-width: 64ch;
+        color: #333;
+      }
+      .team .team-member .social {
+        justify-content: center;
+        display: flex;
+        gap: 0.6rem;
+        margin-top: 0.8rem;
+      }
+      @media (max-width: 991px) {
+        .team .team-member .member-img img {
+          width: 180px;
+          height: 180px;
+        }
+      }
+
+      .category-preview-img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 14px;
+        background: #f7f7f7;
+        border: 1px solid #eee;
+      }
+
+      .loading-box,
+      .empty-box {
+        text-align: center;
+        padding: 25px;
+        border: 1px dashed #d9d9d9;
+        border-radius: 12px;
+        background: #fff;
+      }
+    </style>
+  </head>
+
+  <body
+    class="index-page"
+    data-bs-spy="scroll"
+    data-bs-target="#navmenu"
+    data-bs-offset="120"
+    tabindex="0"
+  >
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <h1 class="sitename">TLK Export</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#portfolio">Certifications</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section id="hero" class="hero section light-background">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="hero-content">
+                <h1 data-aos="fade-up" data-aos-delay="200">
+                  Premium Wooden Crafts for Global Export
+                </h1>
+                <p data-aos="fade-up" data-aos-delay="300">
+                  Discover exquisite handcrafted wooden products from Sri Lanka.
+                  We combine traditional craftsmanship with modern design to
+                  deliver premium quality wooden crafts to markets worldwide.
+                  Your trusted partner in authentic wooden art exports.
+                </p>
+                <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+                  <a href="#about" class="btn-primary"
+                    >Explore Our Collection</a
+                  >
+                  <a
+                    href="https://youtu.be/XNXRC40TQT0?si=hNWMABwOiHRW-H9p"
+                    class="btn-secondary glightbox"
+                  >
+                    <i class="bi bi-play-circle"></i>
+                    Watch Craftsmanship
+                  </a>
+                </div>
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
+                  <div class="stat-item">
+                    <div class="stat-number">2000+</div>
+                    <div class="stat-label">Products Exported</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Countries Served</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years Experience</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
+                <img
+                  src="assets/img/about/ew.jpg"
+                  alt="Business Success"
+                  class="img-fluid"
+                  style="height: 500px; width: 700px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about section">
+        <div class="container section-title" data-aos="fade-up">
+          <span class="subtitle">About</span>
+          <h2>About TLK Export</h2>
+          <p>
+            Leading the wooden craft export industry with authentic Sri Lankan
+            artistry and exceptional quality standards that meet international
+            market demands
+          </p>
+        </div>
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+              <div class="content">
+                <h2>Crafting Excellence Through Tradition and Innovation</h2>
+                <p class="lead">
+                  We are dedicated artisans and export professionals committed
+                  to bringing the finest Sri Lankan wooden crafts to global
+                  markets with uncompromising quality and service.
+                </p>
+
+                <p>
+                  TLK Export specializes in handcrafted wooden products that
+                  showcase the rich heritage of Sri Lankan craftsmanship. Each
+                  piece is carefully crafted by skilled artisans using
+                  sustainably sourced timber, ensuring authenticity and
+                  environmental responsibility in every export shipment.
+                </p>
+
+                <p>
+                  Our commitment to excellence extends from the workshop to
+                  international delivery. We maintain rigorous quality control
+                  standards, handle all export documentation, and ensure timely
+                  shipments to retailers, wholesalers, and importers across the
+                  globe.
+                </p>
+
+                <div class="stats-row">
+                  <div class="stat-item">
+                    <div
+                      class="stat-number purecounter"
+                      data-purecounter-start="0"
+                      data-purecounter-end="15"
+                      data-purecounter-duration="1"
+                    ></div>
+                    <div class="stat-label">Years Experience</div>
+                  </div>
+                  <div class="stat-item">
+                    <div
+                      class="stat-number purecounter"
+                      data-purecounter-start="0"
+                      data-purecounter-end="2500"
+                      data-purecounter-duration="1"
+                    ></div>
+                    <div class="stat-label">Shipments Completed</div>
+                  </div>
+                  <div class="stat-item">
+                    <div
+                      class="stat-number purecounter"
+                      data-purecounter-start="0"
+                      data-purecounter-end="180"
+                      data-purecounter-duration="1"
+                    ></div>
+                    <div class="stat-label">Global Partners</div>
+                  </div>
+                </div>
+
+                <div class="cta-section">
+                  <a href="#team" class="btn-outline">Meet Our Artisans</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+              <div class="image-wrapper">
+                <img
+                  src="assets/img/about/about-square-12.jpeg"
+                  alt="About us"
+                  class="img-fluid"
+                />
+                <div
+                  class="floating-card"
+                  data-aos="zoom-in"
+                  data-aos-delay="500"
+                >
+                  <div class="card-content">
+                    <div class="icon">
+                      <i class="bi bi-award"></i>
+                    </div>
+                    <div class="text">
+                      <h4>Export Certified</h4>
+                      <p>Internationally recognized quality standards</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DYNAMIC PRODUCTS SECTION -->
+      <section id="products" class="products section">
+        <div class="container section-title" data-aos="fade-up">
+          <span class="subtitle">Products</span>
+          <h2>Our Product Categories</h2>
+          <p>
+            Choose a category to view available products and specifications.
+          </p>
+        </div>
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-5" id="home-categories-container">
+            <div class="col-12">
+              <div class="loading-box">Loading categories...</div>
+            </div>
+          </div>
+
+          <div class="text-center my-4">
+            <a href="products.html" class="btn btn-outline-primary"
+              >Explore more Products</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="why-us" class="why-us section">
+        <div class="container section-title" data-aos="fade-up">
+          <span class="subtitle">Why Us</span>
+          <h2>Why Choose TLK Export</h2>
+          <p>
+            Experience the difference of working with a trusted wooden craft
+            export partner committed to quality, reliability, and sustainable
+            practices
+          </p>
+        </div>
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+              <div class="content">
+                <h2>Your Trusted Export Partner</h2>
+                <p>
+                  We deliver authentic Sri Lankan wooden crafts to global
+                  markets through proven expertise, sustainable sourcing
+                  practices, and unwavering commitment to export excellence. Our
+                  comprehensive approach ensures quality assurance and timely
+                  delivery worldwide.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+              <div class="image-wrapper">
+                <img
+                  src="assets/img/about/about-8.webp"
+                  alt="Professional team collaboration"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="features-grid" data-aos="fade-up" data-aos-delay="400">
+            <div class="row g-5">
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-item">
+                  <div class="icon-wrapper">
+                    <i class="bi bi-check-circle"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h3>Premium Quality Assurance</h3>
+                    <p>
+                      Every wooden craft undergoes rigorous quality inspection
+                      at multiple stages, ensuring only the finest products
+                      reach international markets with export-grade standards.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-item">
+                  <div class="icon-wrapper">
+                    <i class="bi bi-globe"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h3>Global Export Experience</h3>
+                    <p>
+                      With shipments to over 25 countries, our team expertly
+                      handles international logistics, customs documentation,
+                      and compliance requirements for seamless delivery.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-item">
+                  <div class="icon-wrapper">
+                    <i class="bi bi-recycle"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h3>Sustainable Sourcing</h3>
+                    <p>
+                      We prioritize environmental responsibility by using
+                      sustainably harvested timber and eco-friendly finishing
+                      materials, ensuring ethical production practices
+                      throughout.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-item">
+                  <div class="icon-wrapper">
+                    <i class="bi bi-lightning-charge"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h3>Competitive Pricing</h3>
+                    <p>
+                      Direct manufacturer pricing with bulk order discounts,
+                      reliable shipping schedules, and flexible payment terms
+                      designed for international business partnerships.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="portfolio section">
+        <div class="container section-title" data-aos="fade-up">
+          <span class="subtitle">Certifications</span>
+          <h2>Certifications & Approvals</h2>
+          <p>
+            Official recognitions and approvals relevant to TLK Export's
+            products and operations.
+          </p>
+        </div>
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="isotope-layout"
+            data-default-filter="*"
+            data-layout="masonry"
+            data-sort="original-order"
+          >
+            <div
+              class="row gy-5 isotope-container"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="col-lg-12 portfolio-item isotope-item filter-cert">
+                <article class="portfolio-card">
+                  <div class="row g-4 align-items-center">
+                    <div class="col-md-6">
+                      <div class="project-visual">
+                        <img
+                          src="assets/img/EDB.png"
+                          alt="EDB"
+                          class="img-fluid"
+                          loading="lazy"
+                        />
+                        <div class="project-overlay">
+                          <div class="overlay-content">
+                            <a
+                              href="assets/img/EDB.png"
+                              class="view-project glightbox"
+                              aria-label="View EDB certificate"
+                            >
+                              <i class="bi bi-eye"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="project-details">
+                        <div class="project-header">
+                          <span class="project-category">Certification</span>
+                          <time class="project-year">EDB</time>
+                        </div>
+                        <h3 class="project-title">
+                          Export Development Board (EDB)
+                        </h3>
+                        <p class="project-description">
+                          Official support and certification for exporters,
+                          confirming TLK Export's export compliance and trade
+                          facilitation status.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-lg-12 portfolio-item isotope-item filter-cert">
+                <article class="portfolio-card">
+                  <div class="row g-4 align-items-center">
+                    <div class="col-md-6 order-md-2">
+                      <div class="project-visual">
+                        <img
+                          src="assets/img/European.png"
+                          alt="European Commission"
+                          class="img-fluid"
+                          loading="lazy"
+                        />
+                        <div class="project-overlay">
+                          <div class="overlay-content">
+                            <a
+                              href="assets/img/European.png"
+                              class="view-project glightbox"
+                              aria-label="View European Commission recognition"
+                            >
+                              <i class="bi bi-eye"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 order-md-1">
+                      <div class="project-details">
+                        <div class="project-header">
+                          <span class="project-category">Recognition</span>
+                          <time class="project-year">EU</time>
+                        </div>
+                        <h3 class="project-title">
+                          European Commission Recognition
+                        </h3>
+                        <p class="project-description">
+                          Compliance acknowledgement for exports to EU markets,
+                          aligning TLK Export's products with European import
+                          standards.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-lg-12 portfolio-item isotope-item filter-cert">
+                <article class="portfolio-card">
+                  <div class="row g-4 align-items-center">
+                    <div class="col-md-6">
+                      <div class="project-visual">
+                        <img
+                          src="assets/img/Com.png"
+                          alt="Department of Commerce"
+                          class="img-fluid"
+                          loading="lazy"
+                        />
+                        <div class="project-overlay">
+                          <div class="overlay-content">
+                            <a
+                              href="assets/img/Com.png"
+                              class="view-project glightbox"
+                              aria-label="View Department of Commerce certificate"
+                            >
+                              <i class="bi bi-eye"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="project-details">
+                        <div class="project-header">
+                          <span class="project-category">Approval</span>
+                          <time class="project-year">DOC</time>
+                        </div>
+                        <h3 class="project-title">
+                          Department of Commerce Approval
+                        </h3>
+                        <p class="project-description">
+                          Trade facilitation and export licensing confirmations
+                          enabling smooth international shipments and
+                          documentation support.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-lg-12 portfolio-item isotope-item filter-cert">
+                <article class="portfolio-card">
+                  <div class="row g-4 align-items-center">
+                    <div class="col-md-6 order-md-2">
+                      <div class="project-visual">
+                        <img
+                          src="assets/img/Comsecond.png"
+                          alt="National Chamber of Commerce"
+                          class="img-fluid"
+                          loading="lazy"
+                        />
+                        <div class="project-overlay">
+                          <div class="overlay-content">
+                            <a
+                              href="assets/img/Comsecond.png"
+                              class="view-project glightbox"
+                              aria-label="View National Chamber membership"
+                            >
+                              <i class="bi bi-eye"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 order-md-1">
+                      <div class="project-details">
+                        <div class="project-header">
+                          <span class="project-category">Membership</span>
+                          <time class="project-year">NCCSL</time>
+                        </div>
+                        <h3 class="project-title">
+                          National Chamber of Commerce (Sri Lanka)
+                        </h3>
+                        <p class="project-description">
+                          Membership and endorsement demonstrating business
+                          credibility and connections within Sri Lanka's trade
+                          community.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-lg-12 portfolio-item isotope-item filter-cert">
+                <article class="portfolio-card">
+                  <div class="row g-4 align-items-center">
+                    <div class="col-md-6">
+                      <div class="project-visual">
+                        <img
+                          src="assets/img/Environment.png"
+                          alt="Central Environment Authority"
+                          class="img-fluid"
+                          loading="lazy"
+                        />
+                        <div class="project-overlay">
+                          <div class="overlay-content">
+                            <a
+                              href="assets/img/Environment.png"
+                              class="view-project glightbox"
+                              aria-label="View Central Environment Authority clearance"
+                            >
+                              <i class="bi bi-eye"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="project-details">
+                        <div class="project-header">
+                          <span class="project-category">Compliance</span>
+                          <time class="project-year">CEA</time>
+                        </div>
+                        <h3 class="project-title">
+                          Central Environment Authority
+                        </h3>
+                        <p class="project-description">
+                          Environmental compliance and approvals confirming
+                          sustainable sourcing and responsible production
+                          practices.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-conclusion"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="conclusion-content">
+              <h4>Need certified documentation?</h4>
+              <p>
+                Contact us for certified copies, verification details, and
+                export documentation related to any of the above approvals.
+              </p>
+              <div class="conclusion-actions">
+                <a href="#contact" class="primary-action">
+                  Request Documents
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="#portfolio" class="secondary-action">
+                  View All Certifications
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="team" class="team section">
+        <div class="container section-title" data-aos="fade-up">
+          <span class="subtitle">Team</span>
+          <h2>Founder’s Message</h2>
+        </div>
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-5">
+            <div
+              class="col-lg-6 col-md-8 mx-auto"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="team-member">
+                <div class="member-img text-center">
+                  <img
+                    src="assets/img/Owner.jpeg"
+                    class="img-fluid"
+                    alt="Tharindu Lakshan"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="member-info">
+                  <h4>Tharindu Lakshan</h4>
+                  <span>Founder & Owner</span>
+                  <p>
+                    Welcome to TLK Timber. When I started this company, my goal
+                    was simple — to provide high-quality timber products while
+                    building long-term relationships with our customers. We
+                    believe in honesty, reliability, and delivering the best
+                    value to everyone who works with us. Thank you for trusting
+                    our company and being part of our journey.
+                  </p>
+                  <div class="social">
+                    <a href="#" aria-label="Tharindu on LinkedIn"
+                      ><i class="bi bi-linkedin"></i
+                    ></a>
+                    <a
+                      href="https://www.instagram.com/tharindu_lakshan_k?igsh=MXZwZDhzcHYwbHF6dA=="
+                      aria-label="Tharindu on Instagram"
+                      ><i class="bi bi-instagram"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact section light-background">
+        <div class="container section-title" data-aos="fade-up">
+          <span class="subtitle">Contact</span>
+          <h2>Get In Touch</h2>
+          <p>
+            Ready to explore premium Sri Lankan wooden crafts for your market?
+            Contact us for product catalogs, pricing information, and export
+            inquiries
+          </p>
+        </div>
+
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-5">
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="bi bi-box-seam"></i>
+                </div>
+                <div class="info-content">
+                  <h4>Export Inquiries Welcome</h4>
+                  <p>
+                    We're ready to discuss your wooden craft import requirements
+                    and provide customized solutions for your business needs.
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-details">
+                <div class="detail-item">
+                  <div class="detail-icon">
+                    <i class="bi bi-envelope-open"></i>
+                  </div>
+                  <div class="detail-content">
+                    <span class="detail-label">Email us</span>
+                    <span class="detail-value">export@tlkexport.com</span>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="detail-icon">
+                    <i class="bi bi-telephone-outbound"></i>
+                  </div>
+                  <div class="detail-content">
+                    <span class="detail-label">Call us</span>
+                    <span class="detail-value">+94 76 917 9832</span>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="detail-icon">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <div class="detail-content">
+                    <span class="detail-label">Visit us</span>
+                    <span class="detail-value"
+                      >209/1, Ihala Thalduwa,<br />Avissawella, Sri Lanka</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="form-wrapper">
+                <div class="form-header">
+                  <h3>Request Product Catalog</h3>
+                </div>
+
+                <form
+                  action="https://formspree.io/f/mdaanwng"
+                  method="POST"
+                  class="php-email-form"
+                >
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Company Name</label>
+                        <input
+                          type="text"
+                          name="name"
+                          required
+                          placeholder="Enter your company name"
+                          title="Company Name"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Email Address</label>
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          placeholder="Enter your email address"
+                          title="Email Address"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Product Interest</label>
+                    <input
+                      type="text"
+                      name="subject"
+                      required
+                      placeholder="Enter product(s) of interest"
+                      title="Product Interest"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="projectMessage">Message / Requirements</label>
+                    <textarea
+                      name="message"
+                      id="projectMessage"
+                      rows="5"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div class="my-3">
+                    <div class="loading" style="display: none">Loading...</div>
+                    <div
+                      class="error-message"
+                      style="display: none; color: red"
+                    ></div>
+                    <div
+                      class="sent-message"
+                      style="display: none; color: green"
+                    >
+                      Your inquiry has been sent. We'll respond within 24 hours!
+                    </div>
+                  </div>
+
+                  <button type="submit" class="submit-btn">
+                    <span>Send Inquiry</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="footer dark-background">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">TLK Export</span>
+            </a>
+            <p>
+              Exporting premium Sri Lankan wooden crafts to the world. We
+              combine traditional artisan skills with modern export excellence
+              to deliver authentic quality wooden products to international
+              markets.
+            </p>
+            <div class="social-links d-flex mt-4">
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links ms-md-auto text-center">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#about">About us</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="export-terms.html">Export Terms</a></li>
+              <li><a href="privacy-policy.html">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center">
+            <h4>Contact Us</h4>
+            <p>209/1,</p>
+            <p>Ihala Thalduwa,</p>
+            <p>Avissawella,</p>
+            <p>Sri Lanka.</p>
+            <p class="mt-4">
+              <strong>Phone:</strong> <span>+94 76 917 9832</span>
+            </p>
+            <p><strong>Email:</strong> <span>export@tlkexport.com</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename">TLK Export</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">Made with Love, by <a href="#">SS</a></div>
+      </div>
+    </footer>
+
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <div id="preloader"></div>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector(".php-email-form");
+        const loading = form.querySelector(".loading");
+        const errorMessage = form.querySelector(".error-message");
+        const sentMessage = form.querySelector(".sent-message");
+        const submitBtn = form.querySelector(".submit-btn");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          errorMessage.style.display = "none";
+          sentMessage.style.display = "none";
+          loading.style.display = "block";
+          submitBtn.disabled = true;
+
+          const formData = new FormData(form);
+
+          fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: { Accept: "application/json" },
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              loading.style.display = "none";
+              submitBtn.disabled = false;
+
+              if (data.ok) {
+                sentMessage.style.display = "block";
+                form.reset();
+              } else {
+                errorMessage.style.display = "block";
+                errorMessage.textContent =
+                  data.error || "There was a problem sending your message.";
+              }
+            })
+            .catch(() => {
+              loading.style.display = "none";
+              submitBtn.disabled = false;
+              errorMessage.style.display = "block";
+              errorMessage.textContent =
+                "There was a problem sending your message.";
+            });
+        });
+      });
+
+      if (typeof bootstrap !== "undefined" && document.body) {
+        new bootstrap.ScrollSpy(document.body, {
+          target: "#navmenu",
+          offset: 120,
+        });
+      }
+    </script>
+
+    <!-- FIREBASE + DYNAMIC CATEGORIES -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        getDocs,
+        query,
+        orderBy,
+        where,
+        limit,
+      } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCCFquVz5e0-9TG_VQvWaxYZAKe0x2QH5Q",
+        authDomain: "tlk-admin-81c15.firebaseapp.com",
+        projectId: "tlk-admin-81c15",
+        storageBucket: "tlk-admin-81c15.firebasestorage.app",
+        messagingSenderId: "739308885453",
+        appId: "1:739308885453:web:10f2efafd0620f12db2084",
+        measurementId: "G-R7E3NN05Z8",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      const container = document.getElementById("home-categories-container");
+
+      function getFirstImage(productData) {
+        if (
+          productData &&
+          Array.isArray(productData.images) &&
+          productData.images.length > 0 &&
+          productData.images[0].url
+        ) {
+          return productData.images[0].url;
+        }
+        return "assets/img/placeholder.jpg";
+      }
+
+      function createCategoryCard(
+        categoryId,
+        categoryName,
+        imageUrl,
+        aosDelay = 200,
+      ) {
+        return `
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="${aosDelay}">
+          <div class="product-card service-item">
+            <img src="${imageUrl}" alt="${categoryName}" class="category-preview-img">
+
+            <h3>${categoryName}</h3>
+            <p>Browse products available in the ${categoryName} category.</p>
+            <a href="productdetails.html?categoryId=${encodeURIComponent(categoryId)}&categoryName=${encodeURIComponent(categoryName)}" class="service-link">
+              Learn More <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      `;
+      }
+
+      async function loadHomeCategories() {
+        try {
+          const q = query(
+            collection(db, "categories"),
+            orderBy("createdAt", "asc"),
+            limit(3),
+          );
+          const categorySnapshot = await getDocs(q);
+
+          if (categorySnapshot.empty) {
+            container.innerHTML = `
+            <div class="col-12">
+              <div class="empty-box">No categories found.</div>
+            </div>
+          `;
+            return;
+          }
+
+          let html = "";
+          let delay = 200;
+
+          for (const categoryDoc of categorySnapshot.docs) {
+            const category = categoryDoc.data();
+            const categoryId = categoryDoc.id;
+            const categoryName = category.name || "Unnamed Category";
+
+            const productsQuery = query(
+              collection(db, "products"),
+              where("categoryId", "==", categoryId),
+              limit(1),
+            );
+
+            const productSnapshot = await getDocs(productsQuery);
+
+            let imageUrl = "assets/img/placeholder.jpg";
+            if (!productSnapshot.empty) {
+              imageUrl = getFirstImage(productSnapshot.docs[0].data());
+            }
+
+            html += createCategoryCard(
+              categoryId,
+              categoryName,
+              imageUrl,
+              delay,
+            );
+            delay += 100;
+          }
+
+          container.innerHTML = html;
+        } catch (error) {
+          console.error("Error loading categories:", error);
+          container.innerHTML = `
+          <div class="col-12">
+            <div class="empty-box">Failed to load categories.</div>
+          </div>
+        `;
+        }
+      }
+
+      loadHomeCategories();
+    </script>
+  </body>
+</html>

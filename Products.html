@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>All Products | TLK Export</title>
+    <link href="assets/img/logo.jpeg" rel="icon" />
+    <meta
+      name="description"
+      content="Browse all wooden craft categories by TLK Export"
+    />
+    <meta
+      name="keywords"
+      content="wooden crafts, categories, products, TLK Export"
+    />
+
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      :root {
+        --timber-dark: var(--accent-color);
+        --timber-light: var(--accent-color-2);
+        --timber-muted: rgba(21, 101, 192, 0.08);
+      }
+
+      .sitename {
+        color: var(--timber-dark);
+      }
+
+      .page-header {
+        padding: 140px 0 60px;
+        background: #f8fafc;
+        text-align: center;
+      }
+
+      .page-header h1 {
+        font-size: 2.3rem;
+        margin-bottom: 10px;
+      }
+
+      .page-header p {
+        max-width: 700px;
+        margin: 0 auto;
+        color: #555;
+      }
+
+      .product-card.service-item {
+        border: 1px solid var(--timber-muted);
+        border-radius: 16px;
+        padding: 1.15rem;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease;
+        background: #fff;
+        height: 100%;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+      }
+
+      .product-card.service-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 30px rgba(21, 101, 192, 0.08);
+      }
+
+      .category-preview-img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 14px;
+        background: #f7f7f7;
+        border: 1px solid #eee;
+      }
+
+      .service-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          var(--timber-dark),
+          var(--timber-light)
+        );
+        margin-bottom: 14px;
+        box-shadow: 0 6px 18px rgba(21, 101, 192, 0.06);
+      }
+
+      .service-icon i {
+        color: #fff;
+        font-size: 1.4rem;
+      }
+
+      .service-link {
+        color: var(--timber-dark);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .service-link:hover {
+        color: var(--timber-light);
+      }
+
+      .loading-box,
+      .empty-box {
+        text-align: center;
+        padding: 25px;
+        border: 1px dashed #d9d9d9;
+        border-radius: 12px;
+        background: #fff;
+      }
+
+      .products-section {
+        padding: 60px 0 80px;
+      }
+
+      @media (max-width: 767px) {
+        .page-header {
+          padding: 120px 0 40px;
+        }
+
+        .category-preview-img {
+          height: 210px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="index-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <h1 class="sitename">TLK Export</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="index.html#portfolio">Certifications</a></li>
+            <li><a href="index.html#team">Team</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="page-header">
+        <div class="container" data-aos="fade-up">
+          <h1>All Product Categories</h1>
+          <p>
+            Explore all available wooden craft categories. Click
+            <strong>Learn More</strong> to view products inside each category.
+          </p>
+        </div>
+      </section>
+
+      <section class="products-section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-5" id="all-categories-container">
+            <div class="col-12">
+              <div class="loading-box">Loading categories...</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="footer dark-background">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">TLK Export</span>
+            </a>
+            <p>
+              Exporting premium Sri Lankan wooden crafts to the world. We
+              combine traditional artisan skills with modern export excellence
+              to deliver authentic quality wooden products to international
+              markets.
+            </p>
+            <div class="social-links d-flex mt-4">
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links ms-md-auto text-center">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About us</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="export-terms.html">Export Terms</a></li>
+              <li><a href="privacy-policy.html">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center">
+            <h4>Contact Us</h4>
+            <p>209/1,</p>
+            <p>Ihala Thalduwa,</p>
+            <p>Avissawella,</p>
+            <p>Sri Lanka.</p>
+            <p class="mt-4">
+              <strong>Phone:</strong> <span>+94 76 917 9832</span>
+            </p>
+            <p><strong>Email:</strong> <span>export@tlkexport.com</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename">TLK Export</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">Made with Love, by <a href="#">SS</a></div>
+      </div>
+    </footer>
+
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <div id="preloader"></div>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        getDocs,
+        query,
+        orderBy,
+        where,
+        limit,
+      } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCCFquVz5e0-9TG_VQvWaxYZAKe0x2QH5Q",
+        authDomain: "tlk-admin-81c15.firebaseapp.com",
+        projectId: "tlk-admin-81c15",
+        storageBucket: "tlk-admin-81c15.firebasestorage.app",
+        messagingSenderId: "739308885453",
+        appId: "1:739308885453:web:10f2efafd0620f12db2084",
+        measurementId: "G-R7E3NN05Z8",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      const container = document.getElementById("all-categories-container");
+
+      function getFirstImage(productData) {
+        if (
+          productData &&
+          Array.isArray(productData.images) &&
+          productData.images.length > 0 &&
+          productData.images[0].url
+        ) {
+          return productData.images[0].url;
+        }
+        return "assets/img/placeholder.jpg";
+      }
+
+      function createCategoryCard(
+        categoryId,
+        categoryName,
+        imageUrl,
+        aosDelay = 100,
+      ) {
+        return `
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="${aosDelay}">
+          <div class="product-card service-item">
+            <img src="${imageUrl}" alt="${categoryName}" class="category-preview-img">
+           
+            <h3>${categoryName}</h3>
+            <p>Browse products available in the ${categoryName} category.</p>
+            <a href="productdetails.html?categoryId=${encodeURIComponent(categoryId)}&categoryName=${encodeURIComponent(categoryName)}" class="service-link">
+              Learn More <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      `;
+      }
+
+      async function loadAllCategories() {
+        try {
+          const q = query(
+            collection(db, "categories"),
+            orderBy("createdAt", "asc"),
+          );
+          const categorySnapshot = await getDocs(q);
+
+          if (categorySnapshot.empty) {
+            container.innerHTML = `
+            <div class="col-12">
+              <div class="empty-box">No categories found.</div>
+            </div>
+          `;
+            return;
+          }
+
+          let html = "";
+          let delay = 100;
+
+          for (const categoryDoc of categorySnapshot.docs) {
+            const category = categoryDoc.data();
+            const categoryId = categoryDoc.id;
+            const categoryName = category.name || "Unnamed Category";
+
+            const productsQuery = query(
+              collection(db, "products"),
+              where("categoryId", "==", categoryId),
+              limit(1),
+            );
+
+            const productSnapshot = await getDocs(productsQuery);
+
+            let imageUrl = "assets/img/placeholder.jpg";
+            if (!productSnapshot.empty) {
+              imageUrl = getFirstImage(productSnapshot.docs[0].data());
+            }
+
+            html += createCategoryCard(
+              categoryId,
+              categoryName,
+              imageUrl,
+              delay,
+            );
+            delay += 100;
+          }
+
+          container.innerHTML = html;
+        } catch (error) {
+          console.error("Error loading all categories:", error);
+          container.innerHTML = `
+          <div class="col-12">
+            <div class="empty-box">Failed to load categories.</div>
+          </div>
+        `;
+        }
+      }
+
+      loadAllCategories();
+    </script>
+  </body>
+</html>

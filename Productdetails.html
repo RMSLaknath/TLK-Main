@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product Details | TLK Export</title>
+    <link href="assets/img/logo.jpeg" rel="icon" />
+
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      .product-card {
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 14px;
+        padding: 16px;
+        background: #fff;
+        height: 100%;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      }
+
+      .product-preview-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 12px;
+        background: #f3f4f6;
+        display: block;
+        cursor: pointer;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease;
+      }
+
+      .product-preview-image:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .product-meta {
+        color: #6b7280;
+        font-size: 14px;
+        margin-bottom: 0;
+      }
+
+      .empty-box {
+        text-align: center;
+        padding: 40px 20px;
+        border: 1px dashed #d1d5db;
+        border-radius: 14px;
+        color: #6b7280;
+        background: #fafafa;
+      }
+
+      .back-link {
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .gallery-main-image {
+        width: 100%;
+        max-height: 70vh;
+        object-fit: contain;
+        background: #f8f9fa;
+        border-radius: 12px;
+      }
+
+      .thumb-strip {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding-top: 12px;
+        padding-bottom: 2px;
+      }
+
+      .thumb-strip::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .thumb-strip::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.18);
+        border-radius: 999px;
+      }
+
+      .gallery-thumb {
+        width: 84px;
+        height: 84px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        background: #f3f4f6;
+        cursor: pointer;
+        flex: 0 0 auto;
+        transition:
+          transform 0.18s ease,
+          border-color 0.18s ease,
+          box-shadow 0.18s ease;
+      }
+
+      .gallery-thumb:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+      }
+
+      .gallery-thumb.active {
+        border-color: #0d6efd;
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 60px;
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
+        padding: 22px;
+        background-size: 60% 60%;
+      }
+
+      .loading-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        padding: 56px 20px;
+        border: 1px dashed #d1d5db;
+        border-radius: 14px;
+        background: #fafafa;
+      }
+
+      .loading-spinner {
+        width: 46px;
+        height: 46px;
+        border: 4px solid #e5e7eb;
+        border-top: 4px solid #0d6efd;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+
+      .loading-text {
+        color: #6b7280;
+        font-size: 15px;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .product-preview-image {
+          height: 240px;
+        }
+
+        .gallery-thumb {
+          width: 72px;
+          height: 72px;
+        }
+      }
+    </style>
+  </head>
+  <body class="index-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <h1 class="sitename">TLK Export</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="Products.html" class="active">Products</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="index.html#team">Team</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main" style="margin-top: 90px">
+      <section class="products section">
+        <div class="container section-title">
+          <span class="subtitle">Category</span>
+          <h2 id="categoryTitle">Products</h2>
+          <p id="categorySubtitle">Browse products in this category.</p>
+        </div>
+
+        <div class="container mb-4">
+          <a href="Products.html" class="back-link">← Back to Categories</a>
+        </div>
+
+        <div class="container">
+          <div class="row g-4" id="productsGrid">
+            <div class="col-12">
+              <div class="loading-wrap">
+                <div class="loading-spinner"></div>
+                <div class="loading-text">Loading products...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container py-4">
+      <p class="text-center">© TLK Export</p>
+    </footer>
+
+    <div
+      class="modal fade"
+      id="imageGalleryModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <div>
+              <h5 class="modal-title mb-1" id="galleryTitle">Product Images</h5>
+              <small class="text-muted" id="galleryCount"></small>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <div id="galleryCarouselContainer"></div>
+            <div class="thumb-strip" id="galleryThumbStrip"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        getDocs,
+      } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCCFquVz5e0-9TG_VQvWaxYZAKe0x2QH5Q",
+        authDomain: "tlk-admin-81c15.firebaseapp.com",
+        projectId: "tlk-admin-81c15",
+        storageBucket: "tlk-admin-81c15.firebasestorage.app",
+        messagingSenderId: "739308885453",
+        appId: "1:739308885453:web:10f2efafd0620f12db2084",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      const params = new URLSearchParams(window.location.search);
+      const categoryId = params.get("categoryId");
+      const categoryName = params.get("categoryName");
+
+      const categoryTitle = document.getElementById("categoryTitle");
+      const categorySubtitle = document.getElementById("categorySubtitle");
+      const productsGrid = document.getElementById("productsGrid");
+
+      function escapeHtml(value) {
+        return String(value || "").replace(
+          /[&<>"']/g,
+          (char) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            })[char],
+        );
+      }
+
+      function escapeAttr(value) {
+        return String(value || "").replace(/"/g, "&quot;");
+      }
+
+      function fallbackSvg(label = "No Image") {
+        const safeLabel = String(label).replace(/[<>&'"]/g, "");
+        return `data:image/svg+xml;utf8,
+<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'>
+  <rect width='100%' height='100%' fill='%23f3f4f6'/>
+  <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle'
+        fill='%236b7280' font-family='Arial' font-size='28'>
+    ${safeLabel}
+  </text>
+</svg>`;
+      }
+
+      function renderProductCard(product) {
+        const images =
+          Array.isArray(product.images) && product.images.length
+            ? product.images
+            : [{ url: fallbackSvg("No Image") }];
+
+        const preview = images[0].url;
+
+        return `
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="product-card">
+              <img
+                src="${escapeAttr(preview)}"
+                alt="${escapeAttr(product.name || "Product")}"
+                class="product-preview-image mb-3"
+                loading="lazy"
+                onclick="openGallery('${escapeAttr(product.id)}')"
+              />
+
+              <h5 class="mb-2">${escapeHtml(product.name || "-")}</h5>
+              <p class="product-meta mb-1">Category: ${escapeHtml(product.categoryName || "-")}</p>
+              <p class="product-meta">${images.length} image(s)</p>
+            </div>
+          </div>
+        `;
+      }
+
+      window.openGallery = function (productId) {
+        const products = window.productsList || [];
+        const product = products.find((p) => p.id === productId);
+        if (!product) return;
+
+        const images =
+          Array.isArray(product.images) && product.images.length
+            ? product.images
+            : [{ url: fallbackSvg("No Image") }];
+
+        const carouselId = "productCarousel";
+
+        const items = images
+          .map(
+            (img, i) => `
+              <div class="carousel-item ${i === 0 ? "active" : ""}">
+                <img
+                  src="${escapeAttr(img.url)}"
+                  class="d-block w-100 gallery-main-image"
+                  alt="${escapeAttr(product.name || "Product")}"
+                />
+              </div>
+            `,
+          )
+          .join("");
+
+        const indicators = images
+          .map(
+            (_, i) => `
+              <button
+                type="button"
+                data-bs-target="#${carouselId}"
+                data-bs-slide-to="${i}"
+                class="${i === 0 ? "active" : ""}"
+                ${i === 0 ? 'aria-current="true"' : ""}
+                aria-label="Slide ${i + 1}"
+              ></button>
+            `,
+          )
+          .join("");
+
+        document.getElementById("galleryTitle").textContent =
+          product.name || "Product Images";
+        document.getElementById("galleryCount").textContent =
+          `${images.length} image(s)`;
+
+        document.getElementById("galleryCarouselContainer").innerHTML = `
+          <div id="${carouselId}" class="carousel slide" data-bs-ride="false" data-bs-touch="true">
+            <div class="carousel-indicators">
+              ${indicators}
+            </div>
+
+            <div class="carousel-inner">
+              ${items}
+            </div>
+
+            ${
+              images.length > 1
+                ? `
+                  <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+
+                  <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                `
+                : ""
+            }
+          </div>
+        `;
+
+        document.getElementById("galleryThumbStrip").innerHTML = images
+          .map(
+            (img, i) => `
+              <img
+                src="${escapeAttr(img.url)}"
+                alt="${escapeAttr(product.name || "Product")}"
+                class="gallery-thumb ${i === 0 ? "active" : ""}"
+                data-index="${i}"
+              />
+            `,
+          )
+          .join("");
+
+        const modalEl = document.getElementById("imageGalleryModal");
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+
+        const carouselEl = document.getElementById(carouselId);
+        const carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl, {
+          interval: false,
+          ride: false,
+          touch: true,
+          wrap: true,
+        });
+
+        const thumbs = document.querySelectorAll(
+          "#galleryThumbStrip .gallery-thumb",
+        );
+
+        thumbs.forEach((thumb) => {
+          thumb.addEventListener("click", () => {
+            const index = Number(thumb.dataset.index || 0);
+            carousel.to(index);
+          });
+        });
+
+        carouselEl.addEventListener("slid.bs.carousel", (event) => {
+          thumbs.forEach((thumb) => thumb.classList.remove("active"));
+          const activeThumb = document.querySelector(
+            `#galleryThumbStrip .gallery-thumb[data-index="${event.to}"]`,
+          );
+          if (activeThumb) {
+            activeThumb.classList.add("active");
+            activeThumb.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest",
+              inline: "center",
+            });
+          }
+        });
+      };
+
+      async function loadProducts() {
+        try {
+          categoryTitle.textContent = categoryName || "Products";
+          categorySubtitle.textContent = categoryName
+            ? `Browse all products in ${categoryName}.`
+            : "Browse all products in this category.";
+
+          const snap = await getDocs(collection(db, "products"));
+          const products = snap.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+
+          const categoryProducts = products.filter(
+            (product) =>
+              product.categoryId === categoryId ||
+              product.categoryName === categoryName,
+          );
+
+          window.productsList = categoryProducts;
+
+          if (!categoryProducts.length) {
+            productsGrid.innerHTML = `
+              <div class="col-12">
+                <div class="empty-box">No products found for this category.</div>
+              </div>
+            `;
+            return;
+          }
+
+          productsGrid.innerHTML = categoryProducts
+            .map(renderProductCard)
+            .join("");
+        } catch (err) {
+          console.error(err);
+          productsGrid.innerHTML = `
+            <div class="col-12">
+              <div class="empty-box">Failed to load products.</div>
+            </div>
+          `;
+        }
+      }
+
+      loadProducts();
+    </script>
+  </body>
+</html>
