@@ -41,6 +41,16 @@
         --timber-muted: rgba(21, 101, 192, 0.08);
       }
 
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
       .sitename {
         color: var(--timber-dark);
       }
@@ -54,6 +64,7 @@
         text-decoration: none;
         display: inline-block;
       }
+
       .btn-primary:hover {
         background-color: var(--timber-light);
         border-color: var(--timber-light);
@@ -75,9 +86,21 @@
         margin-bottom: 14px;
         box-shadow: 0 6px 18px rgba(21, 101, 192, 0.06);
       }
+
       .service-icon i {
         color: #fff;
         font-size: 1.4rem;
+      }
+
+      .hero-main-img {
+        width: 100%;
+        max-width: 700px;
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+        border-radius: 14px;
       }
 
       .product-card.service-item {
@@ -90,6 +113,7 @@
         background: #fff;
         height: 100%;
       }
+
       .product-card.service-item:hover {
         transform: translateY(-6px);
         box-shadow: 0 12px 30px rgba(21, 101, 192, 0.06);
@@ -100,6 +124,7 @@
         font-weight: 600;
         text-decoration: none;
       }
+
       .service-link:hover {
         color: var(--timber-light);
         text-decoration: none;
@@ -112,17 +137,11 @@
           color 0.15s ease,
           transform 0.12s ease;
       }
+
       .social-links a:hover .bi,
       .team-member .social a:hover .bi {
         color: var(--timber-light);
         transform: translateY(-3px);
-      }
-
-      @media (max-width: 767px) {
-        .service-icon {
-          width: 56px;
-          height: 56px;
-        }
       }
 
       .team .team-member {
@@ -130,6 +149,7 @@
         margin: 0 auto;
         text-align: center;
       }
+
       .team .team-member .member-img img {
         width: 220px;
         height: 220px;
@@ -139,43 +159,87 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
         border: 6px solid rgba(255, 255, 255, 0.9);
       }
+
       .team .team-member .member-info h4 {
         margin-top: 1rem;
         margin-bottom: 0.25rem;
         font-size: 1.6rem;
       }
+
       .team .team-member .member-info span {
         display: block;
         color: var(--timber-dark);
         font-weight: 600;
         margin-bottom: 0.75rem;
       }
+
       .team .team-member .member-info p {
         margin: 0 auto;
         max-width: 64ch;
         color: #333;
       }
+
       .team .team-member .social {
         justify-content: center;
         display: flex;
         gap: 0.6rem;
         margin-top: 0.8rem;
       }
-      @media (max-width: 991px) {
-        .team .team-member .member-img img {
-          width: 180px;
-          height: 180px;
-        }
-      }
 
-      .category-preview-img {
+      .category-preview-wrap {
         width: 100%;
         height: 220px;
-        object-fit: cover;
         border-radius: 12px;
         margin-bottom: 14px;
         background: #f7f7f7;
         border: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 12px;
+      }
+
+      .category-preview-img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      .product-card.service-item h3 {
+        margin-top: 6px;
+        word-break: break-word;
+        font-size: 1.5rem;
+        line-height: 1.25;
+      }
+
+      .product-card.service-item p {
+        margin-bottom: 12px;
+      }
+
+      .btn-primary,
+      .btn-outline,
+      .submit-btn,
+      .btn.btn-outline-primary {
+        white-space: normal;
+      }
+
+      .contact .detail-value,
+      .footer-contact p,
+      .member-info p,
+      .project-description {
+        word-break: break-word;
+      }
+
+      .hero-content,
+      .content,
+      .project-details,
+      .member-info,
+      .form-wrapper {
+        overflow-wrap: break-word;
       }
 
       .loading-box,
@@ -185,6 +249,162 @@
         border: 1px dashed #d9d9d9;
         border-radius: 12px;
         background: #fff;
+      }
+
+      @media (max-width: 1199px) {
+        .hero-main-img {
+          max-height: 420px;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .hero.section {
+          text-align: center;
+        }
+
+        .hero-content {
+          margin-bottom: 30px;
+        }
+
+        .hero-cta {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 12px;
+        }
+
+        .hero-stats {
+          justify-content: center;
+        }
+
+        .team .team-member .member-img img {
+          width: 180px;
+          height: 180px;
+        }
+
+        .category-preview-wrap {
+          height: 240px;
+        }
+
+        .product-card.service-item h3 {
+          font-size: 1.35rem;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .service-icon {
+          width: 56px;
+          height: 56px;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        .section-title p {
+          font-size: 0.95rem;
+        }
+
+        .hero-content h1 {
+          font-size: 2rem;
+          line-height: 1.25;
+        }
+
+        .hero-content p {
+          font-size: 0.98rem;
+        }
+
+        .hero-main-img {
+          max-height: 320px;
+        }
+
+        .category-preview-wrap {
+          height: 220px;
+          padding: 10px;
+        }
+
+        .product-card.service-item {
+          padding: 1rem;
+        }
+
+        .product-card.service-item h3 {
+          font-size: 1.25rem;
+        }
+
+        .team .team-member {
+          padding: 0 10px;
+        }
+
+        .team .team-member .member-img img {
+          width: 160px;
+          height: 160px;
+        }
+
+        .contact-details .detail-item {
+          align-items: flex-start;
+        }
+
+        .footer .footer-top {
+          text-align: center;
+        }
+
+        .footer .social-links {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .container,
+        .container-fluid {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .hero-content h1 {
+          font-size: 1.75rem;
+        }
+
+        .hero-cta {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .hero-cta a {
+          width: 100%;
+          text-align: center;
+        }
+
+        .hero-stats {
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          align-items: center;
+        }
+
+        .category-preview-wrap {
+          height: 200px;
+        }
+
+        .product-card.service-item h3 {
+          font-size: 1.15rem;
+        }
+
+        .form-wrapper,
+        .project-details,
+        .content {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .submit-btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .scroll-top {
+          right: 14px;
+          bottom: 14px;
+        }
       }
     </style>
   </head>
@@ -234,7 +454,7 @@
                   Your trusted partner in authentic wooden art exports.
                 </p>
                 <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
-                  <a href="#about" class="btn-primary"
+                  <a href="#products" class="btn-primary"
                     >Explore Our Collection</a
                   >
                   <a
@@ -267,8 +487,7 @@
                 <img
                   src="assets/img/about/ew.jpg"
                   alt="Business Success"
-                  class="img-fluid"
-                  style="height: 500px; width: 700px"
+                  class="img-fluid hero-main-img"
                 />
               </div>
             </div>
@@ -378,7 +597,6 @@
         </div>
       </section>
 
-      <!-- DYNAMIC PRODUCTS SECTION -->
       <section id="products" class="products section">
         <div class="container section-title" data-aos="fade-up">
           <span class="subtitle">Products</span>
@@ -1112,7 +1330,6 @@
       }
     </script>
 
-    <!-- FIREBASE + DYNAMIC CATEGORIES -->
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
       import {
@@ -1159,18 +1376,20 @@
         aosDelay = 200,
       ) {
         return `
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="${aosDelay}">
-          <div class="product-card service-item">
-            <img src="${imageUrl}" alt="${categoryName}" class="category-preview-img">
+          <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="${aosDelay}">
+            <div class="product-card service-item">
+              <div class="category-preview-wrap">
+                <img src="${imageUrl}" alt="${categoryName}" class="category-preview-img">
+              </div>
 
-            <h3>${categoryName}</h3>
-            <p>Browse products available in the ${categoryName} category.</p>
-            <a href="productdetails.html?categoryId=${encodeURIComponent(categoryId)}&categoryName=${encodeURIComponent(categoryName)}" class="service-link">
-              Learn More <i class="bi bi-arrow-right"></i>
-            </a>
+              <h3>${categoryName}</h3>
+              <p>Browse products available in the ${categoryName} category.</p>
+              <a href="productdetails.html?categoryId=${encodeURIComponent(categoryId)}&categoryName=${encodeURIComponent(categoryName)}" class="service-link">
+                View More <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
           </div>
-        </div>
-      `;
+        `;
       }
 
       async function loadHomeCategories() {
@@ -1184,10 +1403,10 @@
 
           if (categorySnapshot.empty) {
             container.innerHTML = `
-            <div class="col-12">
-              <div class="empty-box">No categories found.</div>
-            </div>
-          `;
+              <div class="col-12">
+                <div class="empty-box">No categories found.</div>
+              </div>
+            `;
             return;
           }
 
@@ -1225,10 +1444,10 @@
         } catch (error) {
           console.error("Error loading categories:", error);
           container.innerHTML = `
-          <div class="col-12">
-            <div class="empty-box">Failed to load categories.</div>
-          </div>
-        `;
+            <div class="col-12">
+              <div class="empty-box">Failed to load categories.</div>
+            </div>
+          `;
         }
       }
 

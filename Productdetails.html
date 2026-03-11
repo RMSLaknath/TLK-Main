@@ -33,22 +33,32 @@
         box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
       }
 
-      .product-preview-image {
+      .product-preview-wrap {
         width: 100%;
         height: 220px;
-        object-fit: cover;
         border-radius: 12px;
         background: #f3f4f6;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-bottom: 14px;
         cursor: pointer;
         transition:
           transform 0.18s ease,
           box-shadow 0.18s ease;
       }
 
-      .product-preview-image:hover {
+      .product-preview-wrap:hover {
         transform: scale(1.02);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .product-preview-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
       }
 
       .product-meta {
@@ -140,9 +150,8 @@
         justify-content: center;
         gap: 14px;
         padding: 56px 20px;
-        border: 1px dashed #d1d5db;
         border-radius: 14px;
-        background: #fafafa;
+        background: transparent;
       }
 
       .loading-spinner {
@@ -166,7 +175,7 @@
       }
 
       @media (max-width: 576px) {
-        .product-preview-image {
+        .product-preview-wrap {
           height: 240px;
         }
 
@@ -331,13 +340,17 @@
         return `
           <div class="col-lg-4 col-md-6 col-12">
             <div class="product-card">
-              <img
-                src="${escapeAttr(preview)}"
-                alt="${escapeAttr(product.name || "Product")}"
-                class="product-preview-image mb-3"
-                loading="lazy"
+              <div
+                class="product-preview-wrap"
                 onclick="openGallery('${escapeAttr(product.id)}')"
-              />
+              >
+                <img
+                  src="${escapeAttr(preview)}"
+                  alt="${escapeAttr(product.name || "Product")}"
+                  class="product-preview-image"
+                  loading="lazy"
+                />
+              </div>
 
               <h5 class="mb-2">${escapeHtml(product.name || "-")}</h5>
               <p class="product-meta mb-1">Category: ${escapeHtml(product.categoryName || "-")}</p>
