@@ -86,14 +86,27 @@
         box-shadow: 0 14px 30px rgba(21, 101, 192, 0.08);
       }
 
-      .category-preview-img {
+      .category-preview-wrap {
         width: 100%;
         height: 240px;
-        object-fit: cover;
         border-radius: 12px;
         margin-bottom: 14px;
         background: #f7f7f7;
         border: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 12px;
+      }
+
+      .category-preview-img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
       }
 
       .service-icon {
@@ -145,8 +158,9 @@
           padding: 120px 0 40px;
         }
 
-        .category-preview-img {
+        .category-preview-wrap {
           height: 210px;
+          padding: 10px;
         }
       }
     </style>
@@ -320,12 +334,14 @@
         return `
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="${aosDelay}">
           <div class="product-card service-item">
-            <img src="${imageUrl}" alt="${categoryName}" class="category-preview-img">
-           
+            
+           <div class="category-preview-wrap">
+  <img src="${imageUrl}" alt="${categoryName}" class="category-preview-img">
+</div>
             <h3>${categoryName}</h3>
             <p>Browse products available in the ${categoryName} category.</p>
             <a href="productdetails.html?categoryId=${encodeURIComponent(categoryId)}&categoryName=${encodeURIComponent(categoryName)}" class="service-link">
-              Learn More <i class="bi bi-arrow-right"></i>
+              View More <i class="bi bi-arrow-right"></i>
             </a>
           </div>
         </div>
