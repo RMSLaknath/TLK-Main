@@ -183,6 +183,28 @@
           justify-content: center;
         }
       }
+      .custom-logo-wrap {
+        gap: 10px;
+        text-decoration: none;
+      }
+
+      .header-logo-img {
+        width: 42px;
+        height: 42px;
+        object-fit: contain;
+        display: block;
+      }
+
+      @media (max-width: 575px) {
+        .header-logo-img {
+          width: 36px;
+          height: 36px;
+        }
+
+        .custom-logo-wrap {
+          gap: 8px;
+        }
+      }
     </style>
   </head>
 
@@ -191,8 +213,16 @@
       <div
         class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
       >
-        <a href="index.html" class="logo d-flex align-items-center">
-          <h1 class="sitename">TLK Export</h1>
+        <a
+          href="index.html"
+          class="logo d-flex align-items-center custom-logo-wrap"
+        >
+          <img
+            src="assets/img/logo.png"
+            alt="TLK Export Logo"
+            class="header-logo-img"
+          />
+          <h1 class="sitename mb-0">TLK Export</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
