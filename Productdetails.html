@@ -17,6 +17,11 @@
     <link href="assets/css/main.css" rel="stylesheet" />
 
     <style>
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
       .product-card {
         border: 1px solid rgba(0, 0, 0, 0.08);
         border-radius: 14px;
@@ -44,19 +49,14 @@
         overflow: hidden;
         margin-bottom: 14px;
         cursor: pointer;
-        transition:
-          transform 0.18s ease,
-          box-shadow 0.18s ease;
-      }
-
-      .product-preview-wrap:hover {
-        transform: scale(1.02);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        padding: 12px;
       }
 
       .product-preview-image {
-        width: 100%;
-        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
         object-fit: contain;
         display: block;
       }
@@ -65,6 +65,7 @@
         color: #6b7280;
         font-size: 14px;
         margin-bottom: 0;
+        word-break: break-word;
       }
 
       .empty-box {
@@ -95,6 +96,7 @@
         overflow-x: auto;
         padding-top: 12px;
         padding-bottom: 2px;
+        justify-content: center;
       }
 
       .thumb-strip::-webkit-scrollbar {
@@ -150,8 +152,6 @@
         justify-content: center;
         gap: 14px;
         padding: 56px 20px;
-        border-radius: 14px;
-        background: transparent;
       }
 
       .loading-spinner {
@@ -168,20 +168,68 @@
         font-size: 15px;
       }
 
+      .product-card h5 {
+        word-break: break-word;
+        line-height: 1.35;
+      }
+
       @keyframes spin {
         to {
           transform: rotate(360deg);
         }
       }
 
-      @media (max-width: 576px) {
+      @media (max-width: 991px) {
         .product-preview-wrap {
           height: 240px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .product-card {
+          padding: 14px;
+        }
+
+        .product-preview-wrap {
+          height: 220px;
+        }
+
+        .gallery-main-image {
+          max-height: 55vh;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .product-preview-wrap {
+          height: 200px;
+          padding: 10px;
         }
 
         .gallery-thumb {
           width: 72px;
           height: 72px;
+        }
+
+        .thumb-strip {
+          justify-content: flex-start;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+          width: 42px;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+          padding: 16px;
+        }
+
+        .back-link {
+          font-size: 14px;
+        }
+
+        .section-title h2 {
+          font-size: 1.8rem;
         }
       }
     </style>
@@ -199,8 +247,8 @@
           <ul>
             <li><a href="index.html#hero">Home</a></li>
             <li><a href="index.html#about">About</a></li>
-            <li><a href="Products.html" class="active">Products</a></li>
-            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="index.html#portfolio">Certifications</a></li>
             <li><a href="index.html#team">Team</a></li>
             <li><a href="index.html#contact">Contact</a></li>
           </ul>
@@ -218,7 +266,7 @@
         </div>
 
         <div class="container mb-4">
-          <a href="Products.html" class="back-link">← Back to Categories</a>
+          <a href="products.html" class="back-link">← Back to Categories</a>
         </div>
 
         <div class="container">
@@ -270,6 +318,7 @@
     </div>
 
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
@@ -329,13 +378,19 @@
 </svg>`;
       }
 
+      function getImageUrl(image) {
+        if (typeof image === "string") return image;
+        if (image && typeof image === "object" && image.url) return image.url;
+        return fallbackSvg("No Image");
+      }
+
       function renderProductCard(product) {
         const images =
           Array.isArray(product.images) && product.images.length
             ? product.images
             : [{ url: fallbackSvg("No Image") }];
 
-        const preview = images[0].url;
+        const preview = getImageUrl(images[0]);
 
         return `
           <div class="col-lg-4 col-md-6 col-12">
@@ -377,7 +432,7 @@
             (img, i) => `
               <div class="carousel-item ${i === 0 ? "active" : ""}">
                 <img
-                  src="${escapeAttr(img.url)}"
+                  src="${escapeAttr(getImageUrl(img))}"
                   class="d-block w-100 gallery-main-image"
                   alt="${escapeAttr(product.name || "Product")}"
                 />
@@ -438,7 +493,7 @@
           .map(
             (img, i) => `
               <img
-                src="${escapeAttr(img.url)}"
+                src="${escapeAttr(getImageUrl(img))}"
                 alt="${escapeAttr(product.name || "Product")}"
                 class="gallery-thumb ${i === 0 ? "active" : ""}"
                 data-index="${i}"
