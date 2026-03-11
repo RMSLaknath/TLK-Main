@@ -406,6 +406,32 @@
           bottom: 14px;
         }
       }
+
+      .map-detail-content {
+        width: 100%;
+      }
+
+      .map-preview-wrap {
+        width: 100%;
+        margin-top: 8px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #e9e9e9;
+        background: #fff;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      }
+
+      .map-preview-wrap iframe {
+        display: block;
+        width: 100%;
+        border: 0;
+      }
+
+      @media (max-width: 575px) {
+        .map-preview-wrap iframe {
+          height: 200px;
+        }
+      }
     </style>
   </head>
 
@@ -1081,7 +1107,7 @@
                   </div>
                   <div class="detail-content">
                     <span class="detail-label">Email us</span>
-                    <span class="detail-value">export@tlkexport.com</span>
+                    <span class="detail-value">info@tlkexport.com</span>
                   </div>
                 </div>
 
@@ -1091,7 +1117,7 @@
                   </div>
                   <div class="detail-content">
                     <span class="detail-label">Call us</span>
-                    <span class="detail-value">+94 76 917 9832</span>
+                    <span class="detail-value">+94 76 395 9832</span>
                   </div>
                 </div>
 
@@ -1099,11 +1125,33 @@
                   <div class="detail-icon">
                     <i class="bi bi-geo-alt-fill"></i>
                   </div>
-                  <div class="detail-content">
-                    <span class="detail-label">Visit us</span>
-                    <span class="detail-value"
-                      >209/1, Ihala Thalduwa,<br />Avissawella, Sri Lanka</span
-                    >
+                  <div class="detail-item map-only-item">
+                    <div class="detail-content map-detail-content">
+                      <span class="detail-label">Visit us</span>
+
+                      <div class="map-preview-wrap">
+                        <iframe
+                          src="https://www.google.com/maps?q=TLK+Exports,+Avissawella,+Sri+Lanka&output=embed"
+                          width="100%"
+                          height="220"
+                          style="border: 0"
+                          allowfullscreen=""
+                          loading="lazy"
+                          referrerpolicy="no-referrer-when-downgrade"
+                          title="TLK Exports Location"
+                        ></iframe>
+                      </div>
+
+                      <a
+                        href="https://www.google.com/maps/place/TLK+Exports/@6.9606095,80.2299935,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae3a9007025444d:0xb681c395684d449c!8m2!3d6.9606095!4d80.2299935!16s%2Fg%2F11yctcdldm!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDMwOS4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="service-link"
+                        style="display: inline-block; margin-top: 10px"
+                      >
+                        Open in Google Maps <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
