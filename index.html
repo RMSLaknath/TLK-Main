@@ -484,6 +484,201 @@
           gap: 8px;
         }
       }
+      .about.section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+      .about .section-title {
+        margin-bottom: 50px;
+      }
+
+      .about .section-title h2 {
+        margin-bottom: 18px;
+      }
+
+      .about-section-intro {
+        max-width: 760px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+      .about-main-row {
+        margin-top: 10px;
+      }
+
+      .about-content {
+        padding-right: 18px;
+      }
+
+      .about-content h3 {
+        font-size: 2rem;
+        line-height: 1.3;
+        margin-bottom: 18px;
+      }
+
+      .about-lead {
+        font-size: 1.08rem;
+        line-height: 1.8;
+        color: #4b5563;
+        margin-bottom: 18px;
+      }
+
+      .about-content p {
+        line-height: 1.85;
+        color: #4b5563;
+        margin-bottom: 16px;
+      }
+
+      .about-image-wrap {
+        position: relative;
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      .about-main-img {
+        width: 100%;
+        border-radius: 22px;
+        display: block;
+        object-fit: cover;
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+      }
+
+      .about-floating-card {
+        position: absolute;
+        left: 22px;
+        bottom: 22px;
+        background: #fff;
+        border-radius: 16px;
+        padding: 16px 18px;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+        max-width: 280px;
+      }
+
+      .about-floating-card .card-content {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .about-floating-card .icon {
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          var(--timber-dark),
+          var(--timber-light)
+        );
+      }
+
+      .about-floating-card .icon i {
+        color: #fff;
+        font-size: 1.2rem;
+      }
+
+      .about-floating-card .text h4 {
+        margin: 0 0 4px;
+        font-size: 1rem;
+      }
+
+      .about-floating-card .text p {
+        margin: 0;
+        font-size: 0.92rem;
+        line-height: 1.5;
+        color: #666;
+      }
+
+      .stats-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 28px;
+        margin-bottom: 28px;
+      }
+
+      .stats-row .stat-item {
+        flex: 1 1 150px;
+        background: #fff;
+        border: 1px solid rgba(21, 101, 192, 0.08);
+        border-radius: 14px;
+        padding: 20px 16px;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+      }
+
+      .stats-row .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--timber-dark);
+        line-height: 1.2;
+      }
+
+      .stats-row .stat-label {
+        margin-top: 6px;
+        font-size: 0.95rem;
+        color: #6b7280;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .cta-section {
+        margin-top: 6px;
+      }
+
+      @media (max-width: 991px) {
+        .about .section-title {
+          margin-bottom: 36px;
+        }
+
+        .about-content {
+          padding-right: 0;
+          text-align: center;
+        }
+
+        .stats-row {
+          justify-content: center;
+        }
+
+        .about-floating-card {
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 18px;
+          width: calc(100% - 36px);
+          max-width: 320px;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .about.section {
+          padding-top: 60px;
+          padding-bottom: 60px;
+        }
+
+        .about-content h3 {
+          font-size: 1.55rem;
+        }
+
+        .about-main-img {
+          border-radius: 16px;
+        }
+
+        .about-floating-card {
+          position: static;
+          transform: none;
+          width: 100%;
+          max-width: 100%;
+          margin-top: 16px;
+        }
+
+        .stats-row .stat-item {
+          flex: 1 1 100%;
+        }
+      }
     </style>
 
     <script type="application/ld+json">
@@ -603,22 +798,23 @@
       </section>
 
       <section id="about" class="about section">
-        <div class="container section-title" data-aos="fade-up">
-          <span class="subtitle">About</span>
-          <h2>About TLK Export</h2>
-          <p>
-            TLK Export is a Sri Lankan manufacturer and exporter specializing in
-            wooden brush handles and other wooden products designed for
-            international markets.
-          </p>
-        </div>
+        <div class="container">
+          <div class="section-title text-center" data-aos="fade-up">
+            <span class="subtitle">About</span>
+            <h2>About TLK Export</h2>
+            <p class="about-section-intro">
+              TLK Export is a Sri Lankan manufacturer and exporter specializing
+              in wooden brush handles and other wooden products designed for
+              international markets.
+            </p>
+          </div>
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row align-items-center">
+          <div class="row align-items-center gy-4 about-main-row">
             <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-              <div class="content">
-                <h2>Crafting Excellence Through Tradition and Innovation</h2>
-                <p class="lead">
+              <div class="about-content">
+                <h3>Crafting Excellence Through Tradition and Innovation</h3>
+
+                <p class="about-lead">
                   We are dedicated artisans and export professionals committed
                   to bringing the finest Sri Lankan wooden crafts to global
                   markets with uncompromising quality and service.
@@ -630,6 +826,9 @@
                   consistent dimensions, and export-grade finishing. Every
                   product is carefully crafted using responsibly sourced timber
                   and inspected under strict quality standards before shipment.
+                </p>
+
+                <p>
                   Over the years, TLK Export has built strong relationships with
                   international buyers by maintaining reliable production
                   capacity, transparent communication, and dependable delivery
@@ -646,6 +845,7 @@
                     ></div>
                     <div class="stat-label">Years Experience</div>
                   </div>
+
                   <div class="stat-item">
                     <div
                       class="stat-number purecounter"
@@ -655,6 +855,7 @@
                     ></div>
                     <div class="stat-label">Shipments Completed</div>
                   </div>
+
                   <div class="stat-item">
                     <div
                       class="stat-number purecounter"
@@ -673,14 +874,15 @@
             </div>
 
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
-              <div class="image-wrapper">
+              <div class="about-image-wrap">
                 <img
                   src="assets/img/about/about-square-12.jpeg"
-                  alt="About us"
-                  class="img-fluid"
+                  alt="About TLK Export"
+                  class="img-fluid about-main-img"
                 />
+
                 <div
-                  class="floating-card"
+                  class="about-floating-card"
                   data-aos="zoom-in"
                   data-aos-delay="500"
                 >
