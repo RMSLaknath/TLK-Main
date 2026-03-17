@@ -10,7 +10,10 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat:wght@400;700&family=Poppins&display=swap" rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat:wght@400;700&family=Poppins&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -35,6 +38,10 @@
       padding: 120px 0 60px;
     }
 
+    .section-block {
+      margin-bottom: 70px;
+    }
+
     .gallery-item {
       border-radius: 12px;
       overflow: hidden;
@@ -46,13 +53,13 @@
       height: 260px;
       object-fit: cover;
       transition: transform 0.3s ease;
+      display: block;
     }
 
     .gallery-item:hover img {
       transform: scale(1.05);
     }
 
-    /* Section Headings */
     .gallery-section h2 {
       font-family: "Montserrat", sans-serif;
       font-weight: 700;
@@ -72,9 +79,82 @@
       border-radius: 2px;
     }
 
+    .process-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .process-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+    }
+
+    .process-image {
+      overflow: hidden;
+      display: block;
+    }
+
+    .process-image img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+
+    .process-card:hover .process-image img {
+      transform: scale(1.05);
+    }
+
+    .process-content {
+      padding: 20px 18px 22px;
+      text-align: center;
+    }
+
+    .process-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #000;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-family: "Montserrat", sans-serif;
+      margin-bottom: 14px;
+      font-size: 16px;
+    }
+
+    .process-content h4 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .process-content p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 0;
+      line-height: 1.7;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
     @media (max-width: 768px) {
       .gallery-item img {
         height: 200px;
+      }
+
+      .process-image img {
+        height: 220px;
       }
     }
   </style>
@@ -82,175 +162,267 @@
 
 <body class="index-page">
 
-<!-- HEADER -->
-<header id="header" class="header d-flex align-items-center fixed-top">
-  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+  <!-- HEADER -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center custom-logo-wrap">
+        <img src="assets/img/logo.png" class="header-logo-img" alt="TLK Export Logo" />
+        <h1 class="sitename mb-0">TLK Export</h1>
+      </a>
 
-    <a href="index.html" class="logo d-flex align-items-center custom-logo-wrap">
-      <img src="assets/img/logo.png" class="header-logo-img" />
-      <h1 class="sitename mb-0">TLK Export</h1>
-    </a>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="index.html#hero">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="index.html#portfolio">Certifications</a></li>
-        <li><a href="index.html#team">Team</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-    </nav>
-
-  </div>
-</header>
-
-<!-- MAIN -->
-<main class="main">
-
-  <section class="gallery-section">
-    <div class="container">
-
-      <!-- PRODUCTS -->
-      <div class="mb-5">
-        <h2>Product Showcase</h2>
-        <div class="row g-4">
-
-          <div class="col-lg-4 col-md-6">
-            <a href="assets/img/gallery/product1.jpeg" class="glightbox">
-              <div class="gallery-item">
-                <img src="assets/img/gallery/product1.jpeg" />
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <a href="assets/img/gallery/product2.jpeg" class="glightbox">
-              <div class="gallery-item">
-                <img src="assets/img/gallery/product2.jpeg" />
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <a href="assets/img/gallery/product3.jpeg" class="glightbox">
-              <div class="gallery-item">
-                <img src="assets/img/gallery/product3.jpeg" />
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <a href="assets/img/gallery/product4.jpeg" class="glightbox">
-              <div class="gallery-item">
-                <img src="assets/img/gallery/product4.jpeg" />
-              </div>
-            </a>
-          </div>
-          
-            <div class="col-lg-4 col-md-6">
-                <a href="assets/img/gallery/product5.jpeg" class="glightbox">
-                <div class="gallery-item">
-                    <img src="assets/img/gallery/product5.jpeg" />
-                </div>
-                </a>
-
-        </div>
-        <div class="col-lg-4 col-md-6">
-                <a href="assets/img/gallery/product6.jpeg" class="glightbox">
-                <div class="gallery-item">
-                    <img src="assets/img/gallery/product6.jpeg" />
-                </div>
-                </a>
-
-        </div>
-
-      </div>
-
-      <!-- WORK PROCESS -->
-      <div class="mb-5">
-        <h2>Our Work Process</h2>
-        <div class="row g-4">
-
-          <div class="col-lg-4 col-md-6">
-            <a href="assets/img/gallery/process-1.jpg" class="glightbox">
-              <div class="gallery-item">
-                <img src="assets/img/gallery/process-1.jpg" />
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <a href="assets/img/gallery/process-2.jpg" class="glightbox">
-              <div class="gallery-item">
-                <img src="assets/img/gallery/process-2.jpg" />
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <a href="assets/img/gallery/process-3.jpg" class="glightbox">
-              <div class="gallery-item">
-                <img src="assets/img/gallery/process-3.jpg" />
-              </div>
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- PACKAGING -->
-      <div class="mb-5">
-        <h2>Packaging</h2>
-        <div class="row g-4">
-
-          <div class="col-lg-4 col-md-6">
-            <a href="assets/img/gallery/pack-1.jpg" class="glightbox">
-              <div class="gallery-item">
-                <img src="assets/img/gallery/pack-1.jpg" />
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <a href="assets/img/gallery/pack-2.jpg" class="glightbox">
-              <div class="gallery-item">
-                <img src="assets/img/gallery/pack-2.jpg" />
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <a href="assets/img/gallery/pack-3.jpg" class="glightbox">
-              <div class="gallery-item">
-                <img src="assets/img/gallery/pack-3.jpg" />
-              </div>
-            </a>
-          </div>
-
-        </div>
-      </div>
-
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="index.html#portfolio">Certifications</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
     </div>
-  </section>
+  </header>
 
-</main>
+  <!-- MAIN -->
+  <main class="main">
+    <section class="gallery-section">
+      <div class="container">
 
-<!-- FOOTER -->
-<footer class="footer text-center py-4">
-  <p>© TLK Export</p>
-</footer>
+        <!-- PRODUCT SHOWCASE -->
+        <div class="section-block">
+          <h2>Product Showcase</h2>
+          <div class="row g-4">
 
-<!-- JS -->
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="assets/js/main.js"></script>
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/product1.jpeg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/product1.jpeg" alt="Product 1" />
+                </div>
+              </a>
+            </div>
 
-<script>
-  GLightbox({
-    selector: ".glightbox"
-  });
-</script>
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/product2.jpeg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/product2.jpeg" alt="Product 2" />
+                </div>
+              </a>
+            </div>
 
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/product3.jpeg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/product3.jpeg" alt="Product 3" />
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/product4.jpeg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/product4.jpeg" alt="Product 4" />
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/product5.jpeg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/product5.jpeg" alt="Product 5" />
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/product6.jpeg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/product6.jpeg" alt="Product 6" />
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/product7.jpeg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/product7.jpeg" alt="Product 7" />
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/product8.jpeg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/product8.jpeg" alt="Product 8" />
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/product9.jpeg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/product9.jpeg" alt="Product 9" />
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- OUR WORK PROCESS -->
+        <div class="section-block">
+          <h2>Our Work Process</h2>
+          <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+              <div class="process-card">
+                <a href="assets/img/gallery/process1.jpeg" class="glightbox process-image">
+                  <img src="assets/img/gallery/process1.jpeg" alt="Timber Receiving" />
+                </a>
+                <div class="process-content">
+                  <div class="process-number">1</div>
+                  <h4>Timber Receiving</h4>
+                  <p>
+                    Raw rubber wood logs are received and unloaded at our facility
+                    with proper inspection and handling.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="process-card">
+                <a href="assets/img/gallery/process2.jpeg" class="glightbox process-image">
+                  <img src="assets/img/gallery/process2.jpeg" alt="Wood Preparation" />
+                </a>
+                <div class="process-content">
+                  <div class="process-number">2</div>
+                  <h4>Wood Preparation</h4>
+                  <p>
+                    Logs are selected and prepared as high-quality raw material
+                    for the next stage of production.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="process-card">
+                <a href="assets/img/gallery/process3.jpeg" class="glightbox process-image">
+                  <img src="assets/img/gallery/process3.jpeg" alt="Drying and Treatment" />
+                </a>
+                <div class="process-content">
+                  <div class="process-number">3</div>
+                  <h4>Drying & Treatment</h4>
+                  <p>
+                    Wood is kiln-dried and boron treated to reduce moisture and
+                    improve durability and pest resistance.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="process-card">
+                <a href="assets/img/gallery/process4.jpeg" class="glightbox process-image">
+                  <img src="assets/img/gallery/process4.jpeg" alt="Conditioning and Sorting" />
+                </a>
+                <div class="process-content">
+                  <div class="process-number">4</div>
+                  <h4>Conditioning & Sorting</h4>
+                  <p>
+                    Dried planks are conditioned to optimal moisture levels and
+                    sorted to maintain consistent quality.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="process-card">
+                <a href="assets/img/gallery/process5.jpeg" class="glightbox process-image">
+                  <img src="assets/img/gallery/process5.jpeg" alt="Cutting and Finishing" />
+                </a>
+                <div class="process-content">
+                  <div class="process-number">5</div>
+                  <h4>Cutting & Finishing</h4>
+                  <p>
+                    Wood is shaped to the required dimensions and finished through
+                    sanding for a smooth surface.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="process-card">
+                <a href="assets/img/gallery/process6.jpeg" class="glightbox process-image">
+                  <img src="assets/img/gallery/process6.jpeg" alt="Packing and Export" />
+                </a>
+                <div class="process-content">
+                  <div class="process-number">6</div>
+                  <h4>Packing & Export</h4>
+                  <p>
+                    Final products are securely packed and loaded for safe
+                    transportation to international markets.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PACKAGING -->
+        <div class="section-block">
+          <h2>Packaging</h2>
+          <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/pack1.jpeg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/pack1.jpeg" alt="Packaging 1" />
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/pack2.jpeg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/pack2.jpeg" alt="Packaging 2" />
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/pack3.jpeg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/pack3.jpeg" alt="Packaging 3" />
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer text-center py-4">
+    <p>© TLK Export</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    GLightbox({
+      selector: ".glightbox"
+    });
+  </script>
 </body>
 </html>
