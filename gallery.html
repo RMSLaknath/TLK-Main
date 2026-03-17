@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gallery | TLK Export</title>
+
+    <link href="assets/img/logo.png" rel="icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Montserrat:wght@400;700&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      .custom-logo-wrap {
+        gap: 10px;
+        text-decoration: none;
+      }
+
+      .header-logo-img {
+        width: 42px;
+        height: 42px;
+      }
+
+      .gallery-section {
+        padding: 120px 0 60px;
+      }
+
+      .gallery-item {
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        .gallery-item img {
+          height: 200px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="index-page">
+    <!-- HEADER -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center custom-logo-wrap">
+          <img src="assets/img/logo.png" class="header-logo-img" />
+          <h1 class="sitename mb-0">TLK Export</h1>
+        </a>
+
+        <!-- SAME NAVBAR (NO GALLERY LINK) -->
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="index.html#portfolio">Certifications</a></li>
+            <li><a href="index.html#team">Team</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+      <section class="gallery-section">
+        <div class="container">
+          <div class="row g-4">
+
+            <!-- IMAGE 1 -->
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/gallery-1.jpg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/gallery-1.jpg" />
+                </div>
+              </a>
+            </div>
+
+            <!-- IMAGE 2 -->
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/gallery-2.jpg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/gallery-2.jpg" />
+                </div>
+              </a>
+            </div>
+
+            <!-- IMAGE 3 -->
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/gallery-3.jpg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/gallery-3.jpg" />
+                </div>
+              </a>
+            </div>
+
+            <!-- IMAGE 4 -->
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/gallery-4.jpg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/gallery-4.jpg" />
+                </div>
+              </a>
+            </div>
+
+            <!-- IMAGE 5 -->
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/gallery-5.jpg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/gallery-5.jpg" />
+                </div>
+              </a>
+            </div>
+
+            <!-- IMAGE 6 -->
+            <div class="col-lg-4 col-md-6">
+              <a href="assets/img/gallery/gallery-6.jpg" class="glightbox">
+                <div class="gallery-item">
+                  <img src="assets/img/gallery/gallery-6.jpg" />
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer text-center py-4">
+      <p>© TLK Export</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+    <script>
+      GLightbox({
+        selector: ".glightbox",
+      });
+    </script>
+  </body>
+</html>
